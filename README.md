@@ -21,7 +21,8 @@ Note: You can use [Runscope](https://www.runscope.com/) or similar to test the H
 
 For fun, you can use [Alberto's `slack-post.py` script](https://github.com/vrde/slack-utils ) to post the output on Slack.
 
-You could set up a cron job to run the test daily, and post the result to Slack, by creating the following bash script:
+You could set up a cron job to run the test daily, and post the result to Slack, by creating the following bash script.
+You could call it `runtest.sh`
 
 ```bash
 #!/bin/bash
@@ -42,7 +43,7 @@ chomd +x slack-post.py
 To create the cron job, do `crontab -e` to edit the crontab in a text editor, and add the following line:
 
 ```text
-00 09 * * * /home/username/name-of-bash-script.sh
+00 09 * * * /home/username/runtest.sh
 ```
 
 where `username` is your username (i.e. the output of `whoami`). The added line will run the bash script daily at 09:00.
